@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ui/darkMode";
 
 const navigation = [
   { name: "Home" },
@@ -24,7 +25,7 @@ export const Header = () => {
               key={item.name}
               href="#"
               className={`relative text-lg leading-6 no-underline ${
-                isSelected ? "font-semibold text-white" : "text-gray-500"
+                isSelected ? "font-semibold " : "text-gray-500"
               }`}
               onClick={() => setSelectedLink(item.name)}
             >
@@ -56,7 +57,8 @@ export const Header = () => {
           );
         })}
       </div>
-      <div>
+      <div className="flex items-center gap-4">
+        <ModeToggle />
         <Button variant="destructive">Prendre un rendez-vous</Button>
       </div>
     </div>
