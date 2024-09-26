@@ -10,20 +10,19 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { div } from "framer-motion/client";
 
 export function Services() {
   return (
     <Tabs defaultValue="info" className="w-[700px] m-auto py-20">
       <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger value="info">Informations</TabsTrigger>
         <TabsTrigger value="schedule">Horaire</TabsTrigger>
+        <TabsTrigger value="info">Informations</TabsTrigger>
         <TabsTrigger value="price">Tarifs</TabsTrigger>
       </TabsList>
-      <TabsContent value="info">
+      <TabsContent value="schedule">
         <Card className="flex items-center jusitfy-center flex-col">
           <CardHeader>
-            <CardTitle className="text-center text-xl">Informations</CardTitle>
+            <CardTitle className="text-center text-xl">Horaires</CardTitle>
             <CardDescription className="text-base">
               Les horaires de notre salon de coiffure
             </CardDescription>
@@ -46,49 +45,56 @@ export function Services() {
           </CardFooter>
         </Card>
       </TabsContent>
-      <TabsContent value="schedule">
-        <Card>
+      <TabsContent value="info">
+        <Card className="">
           <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
+            <CardTitle className="pb-6 text-center text-xl">
+              Informations
+            </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
+          <CardContent className="flex gap-5 justify-between">
+            <div className="text-lg space-y-5">
+              <div className="space-y-2">
+                <p>91120 Palaiseau</p>
+                <p>11 Rue de Paris</p>
+              </div>
+              <div className="space-y-2">
+                <p>07 68 73 52 38</p>
+                <p>adrienlegeleu@gmail.com</p>
+              </div>
+              <CardFooter className="pt-10">
+                <Button>Contactez-nous</Button>
+              </CardFooter>
             </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.6201190050797!2d2.2413091767494016!3d48.712741410944865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67814a0a012db%3A0xd5f7b43e77bc32b8!2sRue%20de%20Paris%2C%2091120%20Palaiseau!5e0!3m2!1sfr!2sfr!4v1727330708418!5m2!1sfr!2sfr"
+              className="border-0 rounded-3xl w-2/3 h-80"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
         </Card>
       </TabsContent>
       <TabsContent value="price">
-        <Card>
+        <Card className="flex items-center jusitfy-center flex-col">
           <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
+            <CardTitle className="text-xl text-center">Tarifs</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
+          <CardContent className="space-y-2 py-10">
+            {prices.map((price) => {
+              return (
+                <div
+                  key={price.type}
+                  className="flex items-center gap-20 justify-between"
+                >
+                  <span className="font-semibold">{price.type}</span>
+                  <span className="font-semibold">{price.price}</span>
+                </div>
+              );
+            })}
           </CardContent>
           <CardFooter>
-            <Button>Save password</Button>
+            <Button>Contactez-nous</Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -104,4 +110,11 @@ const schedules = [
   { day: "Vendredi", hours: "09:00-19:00" },
   { day: "Samedi", hours: "09:00-19:00" },
   { day: "Dimanche", hours: "Fermé" },
+];
+const prices = [
+  { type: "Coupe Enfant (moins de 16ans)", price: "16€" },
+  { type: "Coupe Adulte", price: "19€" },
+  { type: "Barbe Homme", price: "11€" },
+  { type: "Shampoing", price: "4€" },
+  { type: "Soin visage", price: "9€" },
 ];
