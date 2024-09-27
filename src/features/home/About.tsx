@@ -35,7 +35,7 @@ const people = [
 
 export function About() {
   return (
-    <HeroHighlight>
+    <HeroHighlight className="flex items-center justify-center flex-col py-12">
       <motion.h1
         initial={{
           opacity: 0,
@@ -66,9 +66,8 @@ export function About() {
             Deserunt temporibus saepe rerum at asperiores.
           </p>
         </div>
-        <div>
-          <MarqueeDemo />
-        </div>
+
+        <MarqueeDemo />
       </div>
     </HeroHighlight>
   );

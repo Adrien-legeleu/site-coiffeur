@@ -4,7 +4,10 @@ import Image from "next/image";
 
 export const Landing = () => {
   return (
-    <div className="px-24 flex items-center justify-center h-screen gap-32">
+    <div
+      className="px-24 flex items-center justify-center h-screen gap-32"
+      id="1"
+    >
       <div className="flex-1 flex items-center flex-col gap-8">
         <TextGenerateEffect
           duration={2}

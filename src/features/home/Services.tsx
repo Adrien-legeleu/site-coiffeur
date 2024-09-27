@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function Services() {
   return (
-    <Tabs defaultValue="info" className="w-[700px] m-auto py-20">
+    <Tabs defaultValue="info" className="w-[700px] m-auto py-20" id="2">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="schedule">Horaire</TabsTrigger>
         <TabsTrigger value="info">Informations</TabsTrigger>

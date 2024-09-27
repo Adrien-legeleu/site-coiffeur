@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/darkMode";
 
 const navigation = [
-  { name: "Home" },
-  { name: "A propos" },
-  { name: "nos services" },
+  { name: "Home", id: "1" },
+  { name: "A propos", id: "3" },
+  { name: "nos services", id: "2" },
 ];
 
 export const Header = () => {
@@ -23,7 +23,7 @@ export const Header = () => {
           return (
             <Link
               key={item.name}
-              href="#"
+              href={`#${item.id}`}
               className={`relative text-lg leading-6 no-underline ${
                 isSelected ? "font-semibold " : "text-gray-500"
               }`}

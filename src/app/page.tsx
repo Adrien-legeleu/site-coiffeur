@@ -1,6 +1,6 @@
 import { Spotlight } from "@/components/acernity/Spotlight";
 import { About, Landing, Services } from "@/features/home";
-import { Header } from "@/features/layout";
+import { Footer, Header } from "@/features/layout";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
       <Landing />
       <Services />
       <About />
+      <Footer />
     </div>
   );
 }
