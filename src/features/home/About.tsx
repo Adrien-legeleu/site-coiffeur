@@ -35,7 +35,7 @@ const people = [
 
 export function About() {
   return (
-    <HeroHighlight className="flex items-center justify-center flex-col py-12">
+    <HeroHighlight className="flex items-center justify-center flex-col py-20">
       <motion.h1
         initial={{
           opacity: 0,

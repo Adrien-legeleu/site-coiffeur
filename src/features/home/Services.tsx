@@ -1,3 +1,5 @@
+"use client";
+import { Highlight } from "@/components/acernity/hero-highlight";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,98 +9,136 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Services() {
   return (
-    <Tabs defaultValue="info" className="w-[700px] m-auto py-20" id="2">
-      <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger value="schedule">Horaire</TabsTrigger>
-        <TabsTrigger value="info">Informations</TabsTrigger>
-        <TabsTrigger value="price">Tarifs</TabsTrigger>
-      </TabsList>
-      <TabsContent value="schedule">
-        <Card className="flex items-center jusitfy-center flex-col">
-          <CardHeader>
-            <CardTitle className="text-center text-xl">Horaires</CardTitle>
-            <CardDescription className="text-base">
-              Les horaires de notre salon de coiffure
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2 w-[300px]">
-            {schedules.map((schedule) => {
-              return (
-                <div
-                  key={schedule.day}
-                  className="flex items-center justify-between"
-                >
-                  <span>{schedule.day}</span>
-                  <span>{schedule.hours}</span>
-                </div>
-              );
-            })}
-          </CardContent>
-          <CardFooter>
-            <Button>Contactez-nous</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="info">
-        <Card className="">
-          <CardHeader>
-            <CardTitle className="pb-6 text-center text-xl">
-              Informations
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex gap-5 justify-between">
-            <div className="text-lg space-y-5">
-              <div className="space-y-2">
-                <p>91120 Palaiseau</p>
-                <p>11 Rue de Paris</p>
-              </div>
-              <div className="space-y-2">
-                <p>07 68 73 52 38</p>
-                <p>adrienlegeleu@gmail.com</p>
-              </div>
-              <CardFooter className="pt-10">
+    <div className="flex items-center flex-col py-20 px-10 gap-20">
+      <motion.h1
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: [20, -5, 0],
+        }}
+        transition={{
+          duration: 0.5,
+          ease: [0.4, 0.0, 0.2, 1],
+        }}
+      >
+        <Highlight className="text-black text-5xl w-full  font-semibold tracking-wider text-center ">
+          Nos Services
+        </Highlight>
+      </motion.h1>
+      <div className="grid grid-cols-40/60 w-full ">
+        <div className="grid grid-cols-2 pr-10 items-center gap-8">
+          <Image
+            width={500}
+            height={1000}
+            src="/images/manblackwhite.jpg"
+            alt="coiffeur image coupe"
+            className="  h-96 rounded-full relative -top-8 object-cover"
+          />
+          <Image
+            width={500}
+            height={1000}
+            src="/images/girlposing.jpg"
+            alt="coiffeur image coupe"
+            className=" h-96 rounded-full relative top-8 object-cover"
+          />
+        </div>
+        <Tabs defaultValue="info" className="max-w-[700px] " id="2">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="schedule">Horaire</TabsTrigger>
+            <TabsTrigger value="info">Informations</TabsTrigger>
+            <TabsTrigger value="price">Tarifs</TabsTrigger>
+          </TabsList>
+          <TabsContent value="schedule">
+            <Card className="flex items-center jusitfy-center flex-col">
+              <CardHeader>
+                <CardTitle className="text-center text-xl">Horaires</CardTitle>
+                <CardDescription className="text-base">
+                  Les horaires de notre salon de coiffure
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 w-[300px]">
+                {schedules.map((schedule) => {
+                  return (
+                    <div
+                      key={schedule.day}
+                      className="flex items-center justify-between"
+                    >
+                      <span>{schedule.day}</span>
+                      <span>{schedule.hours}</span>
+                    </div>
+                  );
+                })}
+              </CardContent>
+              <CardFooter>
                 <Button>Contactez-nous</Button>
               </CardFooter>
-            </div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.6201190050797!2d2.2413091767494016!3d48.712741410944865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67814a0a012db%3A0xd5f7b43e77bc32b8!2sRue%20de%20Paris%2C%2091120%20Palaiseau!5e0!3m2!1sfr!2sfr!4v1727330708418!5m2!1sfr!2sfr"
-              className="border-0 rounded-3xl w-2/3 h-80"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </CardContent>
-        </Card>
-      </TabsContent>
-      <TabsContent value="price">
-        <Card className="flex items-center jusitfy-center flex-col">
-          <CardHeader>
-            <CardTitle className="text-xl text-center">Tarifs</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2 py-10">
-            {prices.map((price) => {
-              return (
-                <div
-                  key={price.type}
-                  className="flex items-center gap-20 justify-between"
-                >
-                  <span className="font-semibold">{price.type}</span>
-                  <span className="font-semibold">{price.price}</span>
+            </Card>
+          </TabsContent>
+          <TabsContent value="info">
+            <Card className="">
+              <CardHeader>
+                <CardTitle className="pb-6 text-center text-xl">
+                  Informations
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex gap-5 justify-between">
+                <div className="text-lg space-y-5">
+                  <div className="space-y-2">
+                    <p>91120 Palaiseau</p>
+                    <p>11 Rue de Paris</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p>07 68 73 52 38</p>
+                    <p>adrienlegeleu@gmail.com</p>
+                  </div>
+                  <CardFooter className="pt-10">
+                    <Button>Contactez-nous</Button>
+                  </CardFooter>
                 </div>
-              );
-            })}
-          </CardContent>
-          <CardFooter>
-            <Button>Contactez-nous</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.6201190050797!2d2.2413091767494016!3d48.712741410944865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67814a0a012db%3A0xd5f7b43e77bc32b8!2sRue%20de%20Paris%2C%2091120%20Palaiseau!5e0!3m2!1sfr!2sfr!4v1727330708418!5m2!1sfr!2sfr"
+                  className="border-0 rounded-3xl w-2/3 h-72"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="price">
+            <Card className="flex items-center jusitfy-center flex-col">
+              <CardHeader>
+                <CardTitle className="text-xl text-center">Tarifs</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 py-10">
+                {prices.map((price) => {
+                  return (
+                    <div
+                      key={price.type}
+                      className="flex items-center gap-20 justify-between"
+                    >
+                      <span className="font-semibold">{price.type}</span>
+                      <span className="font-semibold">{price.price}</span>
+                    </div>
+                  );
+                })}
+              </CardContent>
+              <CardFooter>
+                <Button>Contactez-nous</Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </div>
   );
 }
 
