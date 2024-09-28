@@ -6,28 +6,37 @@ import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/darkMode";
 
 const navigation = [
-  { name: "Home", id: "1" },
-  { name: "A propos", id: "3" },
-  { name: "nos services", id: "2" },
+  { name: "Home", id: 1 },
+  { name: "A propos", id: 3 },
+  { name: "nos services", id: 2 },
 ];
 
 export const Header = () => {
   const [selectedLink, setSelectedLink] = useState("Home");
 
+  const handleScroll = (id: any) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="flex  justify-between px-10 py-7 items-center">
+    <div className="flex  justify-between px-10 py-7 items-center max-w-[1500px] mx-auto">
       <div>STURMAYR</div>
       <div className="flex gap-16">
         {navigation.map((item) => {
           const isSelected = item.name === selectedLink;
           return (
-            <Link
+            <button
               key={item.name}
-              href={`#${item.id}`}
               className={`relative text-lg leading-6 no-underline ${
                 isSelected ? "font-semibold " : "text-gray-500"
               }`}
-              onClick={() => setSelectedLink(item.name)}
+              onClick={() => {
+                setSelectedLink(item.name);
+                handleScroll(item.id); // Définit le comportement de défilement
+              }}
             >
               {item.name}
               {isSelected ? (
@@ -53,13 +62,15 @@ export const Header = () => {
                   </svg>
                 </motion.div>
               ) : null}
-            </Link>
+            </button>
           );
         })}
       </div>
       <div className="flex items-center gap-4">
         <ModeToggle />
-        <Button variant="destructive">Prendre un rendez-vous</Button>
+        <Link href="/booking" target="_blank">
+          <Button variant="destructive">Prendre un rendez-vous</Button>
+        </Link>
       </div>
     </div>
   );

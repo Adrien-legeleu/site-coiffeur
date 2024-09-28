@@ -8,7 +8,7 @@ import {
 } from "react-icons/si";
 export const Footer = () => {
   return (
-    <div className="flex flex-col gap-8 items-center justify-center pb-16 pt-28 px-20">
+    <div className="flex flex-col gap-8 items-center justify-center pb-16 pt-28 px-20 max-w-[1800px] mx-auto">
       <div>
         <h2 className="text-3xl tracking-wide text-center font-medium">
           STURMAYR

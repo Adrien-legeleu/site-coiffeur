@@ -35,39 +35,42 @@ const people = [
 
 export function About() {
   return (
-    <HeroHighlight className="flex items-center justify-center flex-col py-20">
-      <motion.h1
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        animate={{
-          opacity: 1,
-          y: [20, -5, 0],
-        }}
-        transition={{
-          duration: 0.5,
-          ease: [0.4, 0.0, 0.2, 1],
-        }}
-      >
-        <Highlight className="text-black text-5xl w-full  font-semibold tracking-wider text-center ">
-          A propos de nous
-        </Highlight>
-      </motion.h1>
-      <div className="mt-32 grid grid-cols-2 ">
-        <div>
-          <div className="flex flex-row items-center justify-center  mb-10 w-full">
-            <AnimatedTooltip items={people} />
+    <HeroHighlight className=" py-20">
+      <div className="max-w-[1500px] mx-auto flex items-center justify-center flex-col">
+        {" "}
+        <motion.h1
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: [20, -5, 0],
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.4, 0.0, 0.2, 1],
+          }}
+        >
+          <Highlight className="text-black text-5xl w-full  font-semibold tracking-wider text-center ">
+            A propos de nous
+          </Highlight>
+        </motion.h1>
+        <div className="mt-32 grid grid-cols-2 ">
+          <div>
+            <div className="flex flex-row items-center justify-center  mb-10 w-full">
+              <AnimatedTooltip items={people} />
+            </div>
+            <p className="text-lg font-semibold tracking-wider leading-loose text-center px-20">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              asperiores reprehenderit alias, quod culpa veniam sint
+              necessitatibus magnam doloribus vero, libero a at et quas ea.
+              Deserunt temporibus saepe rerum at asperiores.
+            </p>
           </div>
-          <p className="text-lg font-semibold tracking-wider leading-loose text-center px-20">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-            asperiores reprehenderit alias, quod culpa veniam sint
-            necessitatibus magnam doloribus vero, libero a at et quas ea.
-            Deserunt temporibus saepe rerum at asperiores.
-          </p>
-        </div>
 
-        <MarqueeDemo />
+          <MarqueeDemo />
+        </div>
       </div>
     </HeroHighlight>
   );

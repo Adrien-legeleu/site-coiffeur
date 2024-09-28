@@ -15,7 +15,7 @@ import Image from "next/image";
 
 export function Services() {
   return (
-    <div className="flex items-center flex-col py-20 px-10 gap-20">
+    <div className="flex items-center flex-col py-20 px-10 gap-20 max-w-[1500px] mx-auto">
       <motion.h1
         initial={{
           opacity: 0,
@@ -34,7 +34,7 @@ export function Services() {
           Nos Services
         </Highlight>
       </motion.h1>
-      <div className="grid grid-cols-40/60 w-full ">
+      <div className="grid grid-cols-40/60 w-full  2xl:gap-32 ">
         <div className="grid grid-cols-2 pr-10 items-center gap-8">
           <Image
             width={500}
@@ -51,7 +51,7 @@ export function Services() {
             className=" h-96 rounded-full relative top-8 object-cover"
           />
         </div>
-        <Tabs defaultValue="info" className="max-w-[700px] " id="2">
+        <Tabs defaultValue="info" className="max-w-[700px]">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="schedule">Horaire</TabsTrigger>
             <TabsTrigger value="info">Informations</TabsTrigger>

@@ -33,7 +33,6 @@ export const HeroHighlight = ({
         containerClassName
       )}
       onMouseMove={handleMouseMove}
-      id="3"
     >
       <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" />
       <motion.div
