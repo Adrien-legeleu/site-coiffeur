@@ -1,9 +1,9 @@
 import type { Config } from "tailwindcss";
-
 const svgToDataUri = require("mini-svg-data-uri");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+const flattenColorPalette =
+  require("tailwindcss/lib/util/flattenColorPalette").default;
+const plugin = require("tailwindcss/plugin");
+
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -15,6 +15,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      textShadow: {
+        sm: "0 1px 2px white",
+        DEFAULT: "0 2px 4px white",
+        lg: "0 0px 20px white ",
+      },
       gridTemplateColumns: {
         "40/60": "40% 60%",
       },
@@ -103,7 +108,7 @@ const config: Config = {
   plugins: [
     require("tailwindcss-animate"),
     addVariablesForColors,
-    function ({ matchUtilities, theme }: any) {
+    plugin(function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
           "bg-dot-thick": (value: any) => ({
@@ -112,12 +117,27 @@ const config: Config = {
             )}")`,
           }),
         },
-        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+        {
+          values: flattenColorPalette(theme("backgroundColor")),
+          type: "color",
+        }
       );
-    },
+    }),
+    plugin(function ({ matchUtilities, theme }: any) {
+      matchUtilities(
+        {
+          "text-shadow": (value: any) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
   ],
 };
+
 export default config;
+
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(

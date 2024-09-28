@@ -22,9 +22,9 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex  justify-between px-10 py-7 items-center max-w-[1500px] mx-auto">
-      <div>STURMAYR</div>
-      <div className="flex gap-16">
+    <div className="flex max-sm:fixed top-0 left-0 w-full z-50 justify-end sm:justify-between px-10 py-7 items-center max-w-[1500px] mx-auto">
+      <div className="hidden sm:flex">STURMAYR</div>
+      <div className=" gap-16 hidden lg:flex">
         {navigation.map((item) => {
           const isSelected = item.name === selectedLink;
           return (
