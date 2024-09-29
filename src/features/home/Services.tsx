@@ -16,7 +16,7 @@ import Image from "next/image";
 
 export function Services() {
   return (
-    <div className="flex items-center flex-col py-20 px-10 gap-20 max-w-[1500px] mx-auto font-montserrat">
+    <div className="flex items-center flex-col py-20 sm:px-10 px-3 gap-20 max-w-[1500px] mx-auto font-montserrat">
       <motion.h1
         initial={{
           opacity: 0,

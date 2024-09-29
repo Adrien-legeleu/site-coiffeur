@@ -53,7 +53,9 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn(className)}>
       <div className="mt-4">
-        <div className="  leading-loose  tracking-wider">{renderWords()}</div>
+        <div className="  sm:leading-loose leading-relaxed  tracking-wider">
+          {renderWords()}
+        </div>
       </div>
     </div>
   );
