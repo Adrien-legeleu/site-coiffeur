@@ -36,7 +36,7 @@ const people = [
 export function About() {
   return (
     <HeroHighlight className=" py-20">
-      <div className="max-w-[1500px] mx-auto flex items-center justify-center flex-col">
+      <div className="max-w-[1500px] mx-auto flex items-center justify-center flex-col font-montserrat">
         {" "}
         <motion.h1
           initial={{
@@ -52,7 +52,7 @@ export function About() {
             ease: [0.4, 0.0, 0.2, 1],
           }}
         >
-          <Highlight className="text-black sm:text-5xl text-4xl w-full  font-semibold tracking-wider text-center ">
+          <Highlight className="text-black sm:text-5xl text-4xl w-full font-fredoka  font-medium tracking-wider text-center ">
             A propos de nous
           </Highlight>
         </motion.h1>
@@ -62,10 +62,9 @@ export function About() {
               <AnimatedTooltip items={people} />
             </div>
             <p className="text-lg font-semibold tracking-wider leading-loose text-center md:px-32 px-12 lg:px-20">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-              asperiores reprehenderit alias, quod culpa veniam sint
-              necessitatibus magnam doloribus vero, libero a at et quas ea.
-              Deserunt temporibus saepe rerum at asperiores.
+              Chez STURMAYR, notre équipe passionnée est dédiée à vous offrir
+              une expérience de coiffure exceptionnelle. Découvrez nos talents
+              et laissez-nous révéler votre beauté unique.
             </p>
           </div>
 

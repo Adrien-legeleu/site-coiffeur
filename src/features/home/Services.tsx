@@ -1,5 +1,6 @@
 "use client";
 import { Highlight } from "@/components/acernity/hero-highlight";
+import { DialogContact } from "@/components/contact/DialogContact";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,7 +16,7 @@ import Image from "next/image";
 
 export function Services() {
   return (
-    <div className="flex items-center flex-col py-20 px-10 gap-20 max-w-[1500px] mx-auto">
+    <div className="flex items-center flex-col py-20 px-10 gap-20 max-w-[1500px] mx-auto font-montserrat">
       <motion.h1
         initial={{
           opacity: 0,
@@ -30,7 +31,7 @@ export function Services() {
           ease: [0.4, 0.0, 0.2, 1],
         }}
       >
-        <Highlight className="text-black sm:text-5xl text-4xl w-full  font-semibold tracking-wider text-center ">
+        <Highlight className="text-black sm:text-5xl text-4xl w-full  font-medium font-fredoka tracking-wider text-center ">
           Nos Services
         </Highlight>
       </motion.h1>
@@ -79,7 +80,7 @@ export function Services() {
                 })}
               </CardContent>
               <CardFooter>
-                <Button>Contactez-nous</Button>
+                <DialogContact />
               </CardFooter>
             </Card>
           </TabsContent>
@@ -101,7 +102,7 @@ export function Services() {
                     <p>adrienlegeleu@gmail.com</p>
                   </div>
                   <CardFooter className="pt-10">
-                    <Button>Contactez-nous</Button>
+                    <DialogContact />
                   </CardFooter>
                 </div>
                 <iframe
@@ -125,14 +126,14 @@ export function Services() {
                       key={price.type}
                       className="flex items-center gap-20 justify-between"
                     >
-                      <span className="font-semibold">{price.type}</span>
+                      <span className="font-medium">{price.type}</span>
                       <span className="font-semibold">{price.price}</span>
                     </div>
                   );
                 })}
               </CardContent>
               <CardFooter>
-                <Button>Contactez-nous</Button>
+                <DialogContact />
               </CardFooter>
             </Card>
           </TabsContent>

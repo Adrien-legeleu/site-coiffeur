@@ -15,8 +15,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat"],
+        fredoka: ["Fredoka"],
+      },
       textShadow: {
-        sm: "0 1px 2px white",
+        none: "0 0 0 black",
         DEFAULT: "0 2px 4px white",
         lg: "0 0px 20px white ",
       },

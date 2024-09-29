@@ -1,22 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar {
+  width: 14px;
+  /* Largeur de la barre de défilement */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-track {
+  background-color: #e7e7e7;
+  /* Couleur de la piste (clair) */
+  border-radius: 10px;
+  /* Arrondi de la piste */
 }
 
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /* Arrondi du "thumb" */
+  background-color: #c9c9c9;
+  /* Couleur du "thumb" (clair) */
+}
 
+/* Styles pour le mode sombre */
+.dark ::-webkit-scrollbar-track {
+  background-color: #383838;
+  /* Couleur de la piste (sombre) */
+}
 
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #292929;
+  /* Couleur du "thumb" (sombre) */
+}
 
 @layer base {
   :root {
@@ -46,6 +63,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -78,6 +96,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
