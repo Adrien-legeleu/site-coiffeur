@@ -14,8 +14,9 @@ const navigation = [
 export const Header = () => {
   const [selectedLink, setSelectedLink] = useState("Home");
 
-  const handleScroll = (id: any) => {
-    const section = document.getElementById(id);
+  const handleScroll = (id: string) => {
+    // Utiliser "string" au lieu de "any"
+    const section = document.getElementById(id.toString());
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -37,7 +38,7 @@ export const Header = () => {
               }`}
               onClick={() => {
                 setSelectedLink(item.name);
-                handleScroll(item.id); // Définit le comportement de défilement
+                handleScroll(item.id.toString()); // Convertir "id" en chaîne
               }}
             >
               {item.name}

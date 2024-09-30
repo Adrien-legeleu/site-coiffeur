@@ -15,7 +15,10 @@ export const TextGenerateEffect = ({
   duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+
+  // Correction : utilisation de const car wordsArray n'est pas réassigné
+  const wordsArray = words.split(" ");
+
   useEffect(() => {
     animate(
       "span",
@@ -53,7 +56,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn(className)}>
       <div className="mt-4">
-        <div className="  sm:leading-loose leading-relaxed  tracking-wider">
+        <div className="sm:leading-loose leading-relaxed tracking-wider">
           {renderWords()}
         </div>
       </div>

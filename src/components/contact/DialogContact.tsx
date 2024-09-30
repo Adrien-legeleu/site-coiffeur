@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "../ui/button";
 import {
   DialogContent,
@@ -9,7 +8,6 @@ import {
   DialogFooter,
   DialogHeader,
 } from "../ui/dialog";
-import { Label } from "../ui/label";
 
 export const DialogContact = () => {
   return (
@@ -17,14 +15,14 @@ export const DialogContact = () => {
       <DialogTrigger asChild>
         <Button>Contactez-nous</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]  bg-white dark:bg-black font-montserrat">
+      <DialogContent className="sm:max-w-[500px] bg-white dark:bg-black font-montserrat">
         <DialogHeader className="space-y-5">
           <DialogTitle className="text-center font-medium text-2xl font-fredoka">
             Nous contacter
           </DialogTitle>
           <DialogDescription className="text-lg text-center">
             Si vous avez des questions ou souhaitez prendre rendez-vous,
-            n'hésitez pas à nous contacter !
+            n&apos;hésitez pas à nous contacter !
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-3 py-5">
@@ -34,14 +32,13 @@ export const DialogContact = () => {
           </div>
           <div className="flex gap-2">
             <p className="font-medium">email :</p>
-
             <p>adrienlegeleu@gmail.com</p>
           </div>
         </div>
         <DialogFooter className="pt-5">
-          <a href="/booking" target="_blank">
+          <a href="/booking" target="_blank" rel="noopener noreferrer">
             <Button variant="destructive">Prendre rendez-vous</Button>
-          </a>{" "}
+          </a>
           <Button type="submit">Annuler</Button>
         </DialogFooter>
       </DialogContent>

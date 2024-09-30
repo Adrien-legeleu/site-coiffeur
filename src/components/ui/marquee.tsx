@@ -7,7 +7,7 @@ interface MarqueeProps {
   children?: React.ReactNode;
   vertical?: boolean;
   repeat?: number;
-  [key: string]: any;
+  [key: string]: unknown; // Remplacer "any" par "unknown"
 }
 
 export default function Marquee({
@@ -39,7 +39,7 @@ export default function Marquee({
             className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
               "animate-marquee flex-row": !vertical,
               "animate-marquee-vertical flex-col": vertical,
-              // "group-hover:[animation-play-state:paused]": pauseOnHover, // L'animation se met en pause uniquement lors du hover
+              "group-hover:[animation-play-state:paused]": pauseOnHover, // Utilisation de pauseOnHover
               "[animation-direction:reverse]": reverse,
             })}
           >
