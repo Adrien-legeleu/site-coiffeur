@@ -36,10 +36,14 @@ export const DialogContact = () => {
           </div>
         </div>
         <DialogFooter className="pt-5">
-          <a href="/booking" target="_blank" rel="noopener noreferrer">
+          <a
+            className="w-full"
+            href="/booking"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="destructive">Prendre rendez-vous</Button>
           </a>
-          <Button type="submit">Annuler</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

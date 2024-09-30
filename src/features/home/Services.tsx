@@ -100,7 +100,7 @@ export function Services() {
                     <p>07 68 73 52 38</p>
                     <p>adrienlegeleu@gmail.com</p>
                   </div>
-                  <CardFooter className="pt-10">
+                  <CardFooter className="pt-10 m-0">
                     <DialogContact />
                   </CardFooter>
                 </div>

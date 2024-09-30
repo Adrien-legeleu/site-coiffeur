@@ -23,7 +23,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex max-sm:fixed top-0 left-0 w-full z-50 justify-end sm:justify-between px-10 py-7 items-center max-w-[1500px] mx-auto font-montserrat">
+    <div className="flex max-sm:fixed top-0 left-0 w-full z-50 justify-end sm:justify-between sm:px-10 px-4 py-7 items-center max-w-[1500px] mx-auto font-montserrat">
       <div className="hidden sm:flex font-fredoka text-3xl text-black/70 dark:text-white/70">
         STURMAYR
       </div>

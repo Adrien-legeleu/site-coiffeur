@@ -20,7 +20,7 @@ export const Landing = () => {
           <Button>Prenez rendez-vous maintenant !</Button>
         </a>
       </div>
-      <div className="sm:flex-1 w-full h-full  gap-10 flex items-center justify-between relative   max-sm:px-5 lg:justif-center">
+      <div className="sm:flex-1 w-full h-full   flex items-center justify-between relative   max-sm:px-5 lg:justif-center">
         <Image
           src="/images/womenPink.jpg"
           alt="photo coiffeur"
